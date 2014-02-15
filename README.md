@@ -1,4 +1,5 @@
 chess
 =====
 
-A computer chess collaboration. 
+To build: javac *.java
+To run: java -cp .. chess.Chess
