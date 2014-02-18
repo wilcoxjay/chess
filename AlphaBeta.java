@@ -3,13 +3,13 @@ package chess;
 import java.util.*;
 
 public class AlphaBeta extends Player {
-    
+
     public AlphaBeta(int color) {
 	super(color);
     }
 
     public Move getMove(Board board) {
-	return iterativeDeepening(board, 10000);
+	return iterativeDeepening(board, 100);
     }
 
     private Move iterativeDeepening(Board board, int millis) {
@@ -19,8 +19,7 @@ public class AlphaBeta extends Player {
 	do {
 	    move = alphaBeta(board, depth);
 	    depth++;
-	} while (System.currentTimeMillis() < start + millis);
-	System.out.println();
+	} while (System.currentTimeMillis() < start + millis);	
 	return move;
     }
 
@@ -36,7 +35,7 @@ public class AlphaBeta extends Player {
 			     int color, boolean isRoot, List<Move> bestMove) {
 	if (depth == 0 || board.gameOver(color)) {
 	    return board.getValue(color);
-	}	
+	}
 
 	if (color == Piece.WHITE) {
 	    List<Move> moves = board.getLegalMoves(color);
