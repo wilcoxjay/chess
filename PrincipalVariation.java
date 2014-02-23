@@ -3,13 +3,12 @@ package chess;
 import java.util.*;
 
 public class PrincipalVariation extends Player {
-    
     public PrincipalVariation(int color) {
 	super(color);
     }
 
     public Move getMove(Board board) {
-	return iterativeDeepening(board, 100);
+	return iterativeDeepening(board, 3000);
     }
 
     private Move iterativeDeepening(Board board, int millis) {
@@ -40,7 +39,7 @@ public class PrincipalVariation extends Player {
 
 	List<Move> moves = board.getLegalMoves(color);
 	Collections.shuffle(moves);
-	if (!prevPV.empty()) {
+	if (!prevPV.empty() && prevPV.peek() != null) {
 	    moves.add(0, prevPV.pop());
 	}
 	

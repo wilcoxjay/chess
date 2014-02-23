@@ -10,8 +10,8 @@ public class Chess {
 
     private Chess() {
 	board = new Board();
-	players = new Player[] {new PrincipalVariation(Piece.WHITE), 
-				new PrincipalVariation(Piece.BLACK)};
+	players = new Player[] {new Human(Piece.WHITE), 
+				new Human(Piece.BLACK)};
 	color = Piece.WHITE;
     }
 

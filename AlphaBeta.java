@@ -9,7 +9,7 @@ public class AlphaBeta extends Player {
     }
 
     public Move getMove(Board board) {
-	return iterativeDeepening(board, 100);
+	return iterativeDeepening(board, 1000);
     }
 
     private Move iterativeDeepening(Board board, int millis) {
